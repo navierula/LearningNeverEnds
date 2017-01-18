@@ -114,5 +114,51 @@ while !x > 20 do
   x := !x - 2
 done
 
+(* function def *)
+let incr n = n + 1
+
+(* function def with tuples/parameters *)
+let plus_and_mult (a, b, c) = (a + b) * c
+
+(* function calls *)
+incr 10
+plus_and_mult(2, 4, 6)
+
+(* define addition function *)
+let plus x y = x + y
+
+(* call addition function *)
+plus 3 4
+
+(* function can return mult values, thanks tuples! *)
+let divide x y = (x / y, x mod y)
+
+(* so, calling it returns multi vals *)
+divide 10 4
+
+(* more practice and forms *)
+let mult x y = x * y
+let double mult 2
+double 11
+
+(* define function and apply it *)
+(fun x -> x + 1) 10
+
+(* increment every element in list *)
+List.map
+List.map (fun x -> x + 1) [1; 2; 3; 4]
+
+(* you can fold to compute sum of all elements in list *)
+List.fold_left
+(fun acc -> acc + x)
+0 
+[1; 2; 3; 4]
+
+(* we can also do this *)
+let plus = fun acc x -> acc + x
+List.fold_left plus 0 [1; 2; 3; 4]
+
+
+
 
 
