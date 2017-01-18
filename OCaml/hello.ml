@@ -158,6 +158,56 @@ List.fold_left
 let plus = fun acc x -> acc + x
 List.fold_left plus 0 [1; 2; 3; 4]
 
+(* define pattern matching *)
+
+let string_of_int x = match x with
+   | 0 -> "zero"
+   | 1 -> "one"
+   | 2 -> "two"
+   | _ -> "many"
+
+(* pattern matching on characters *)
+
+let is_capital = function
+  | 'a' .. 'z' -> false
+  | 'A' .. 'Z' -> true
+  | _          -> failwith "Not a valid letter"
+
+
+(* pattern matching with tuples *)
+let fit str len = match (str,len) with
+  | ("foo", 51) -> true
+  | ("bar", 51) -> true
+  | (_    , 42) -> false
+  | _           -> (String.length str) = len
+
+
+(* list is either empty [], a head h, or a tail t h::t *)
+(* define the head *)
+
+let head = function
+	| [] -> failwith "empty list"
+	| h :: t -> h
+
+(* second element *)
+let second_element = function
+  | []      -> failwith "the list is empty"
+  | [_]     -> failwith "the list contains only one element"
+  | _::e::_ -> e
+
+(* and further! *)
+let second_element = function
+  | []      -> failwith "the list is empty"
+  | [_]     -> failwith "the list contains only one element"
+  | _::e::_ -> e
+
+(* check for a list of size 2 *)
+let has_size_two = function
+  | [| _; _ |] -> true
+  | _          -> false
+
+
+
 
 
 
