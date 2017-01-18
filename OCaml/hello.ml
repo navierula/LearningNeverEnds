@@ -206,8 +206,26 @@ let has_size_two = function
   | [| _; _ |] -> true
   | _          -> false
 
+(* this results in 42, let assignment *)
+let x = 41 in x + 1
 
+(* grouping using an if statement *)
+if 1+2 = 3 then (
+  print_string "did you knew that?\n" ;
+  print_string "amazing!\n"
+)
 
+(* results in 9 *)
+begin 1 + 2 end * 3
+
+(* 10 *)
+let ten =
+  let double x = x+x in
+  double 3 + 2
+
+(* this is  game where you can click of balls of the same
+color and make them disappear...amazing!! *)
+Sylvain.main()
 
 
 
