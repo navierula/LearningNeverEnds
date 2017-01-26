@@ -86,5 +86,15 @@ values <- -10:10
 absolutes <- abs(values)
 plot(values, absolutes)
 
+# remove NA (null) arguments for sum
+sum(a, na.rm = TRUE)
 
+# matrices
+# create a matrix with all 0s, 3 rows, and 4 columns
+matrix(0, 3, 4)
+
+a <- 1:12
+print(a)
+# matrix now has numbers 1 - 12, ordered vertically
+matrix(a, 3, 4)
 
