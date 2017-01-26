@@ -98,3 +98,60 @@ print(a)
 # matrix now has numbers 1 - 12, ordered vertically
 matrix(a, 3, 4)
 
+# 2 rows, 4 columns, eights!
+eight <- 1:8
+dim(eight) <- c(2,4)
+print(eight)
+# accessing the matrix by row and col
+eight[2, 3]
+# reassign value
+eight[2, 3] <- 0
+# get whole row
+eight[2, ]
+# get whole col
+eight[, 2]
+# all rows, certain columns
+eight[, 2:4]
+
+# plotting matrices
+elevation <- matrix(1, 10, 10)
+elevation[4, 6] <- 0
+contour(elevation)
+persp(elevation)
+persp(elevation, expand = 0.2)
+
+contour(volcano)
+persp(volcano, expand = 0.2)
+# heat map
+image(volcano)
+
+# statistics
+limbs <- c(4, 3, 4, 3, 2, 4, 4, 4)
+names(limbs) <- c('One-Eye', 'Peg-Leg', 'Smitty', 'Hook', 'Scooter', 'Dan', 'Mikey', 'Blackbeard')
+
+# get mean
+mean(limbs)
+barplot(limbs)
+# draw line at the mean in the plot
+abline(h = mean(limbs))
+
+# get median, draw line in plot
+median(limbs)
+abline(h = median(limbs))
+
+pounds <- c(45000, 50000, 35000, 40000, 35000, 45000, 10000, 15000)
+barplot(pounds)
+meanValue <- mean(pounds)
+# standard deviation
+deviation <- sd(pounds)
+# show two lines
+abline( h = meanValue + deviation)
+
+chests <- c('gold', 'silver', 'gems', 'gold', 'gems')
+# factors group items by uniqueness
+types <- factor(chests)
+# label as ints
+as.integer(types)
+# print unique item
+levels(types)
+
