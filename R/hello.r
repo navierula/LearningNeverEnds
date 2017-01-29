@@ -155,3 +155,25 @@ as.integer(types)
 # print unique item
 levels(types)
 
+# new plot types and labeling
+weights <- c(300, 200, 100, 250, 150)
+prices <- c(9000, 5000, 12000, 7500, 18000)
+plot(weights, prices)
+
+plot(weights, prices, pch=as.integer(types))
+# create legend
+legend("topright", c("gems","gold","silver"), pch=1:3)
+legend("topright", levels(types), pch=1:length(levels(types)))
+
+# create dataframe
+treasure <- data.frame(weights, prices, types)
+
+# access columns by index or word
+treasure[[2]]
+treasure[["prices"]]
+# or...
+treasure$prices
+
+
+
+
