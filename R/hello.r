@@ -174,6 +174,25 @@ treasure[["prices"]]
 # or...
 treasure$prices
 
+# Loading in data frames!!
+list.files()
+# example: "targets.csv" "infantry.txt"
+
+# read a csv
+read.csv("targets.csv")
+
+# to read a tab separated txt file
+read.table("infantry.txt",sep="\t", header=TRUE)
+
+# merge data frames
+targets <- read.csv("targets.csv")
+infantry <- read.table("infantry.txt", sep="\t", header=TRUE)
+merge(x = targets, y = infantry)
+
+
+
+
+
 
 
 
