@@ -189,9 +189,22 @@ targets <- read.csv("targets.csv")
 infantry <- read.table("infantry.txt", sep="\t", header=TRUE)
 merge(x = targets, y = infantry)
 
+# working with more data
+piracy <- read.csv("piracy.csv")
+gdp <- read.table("gdp.txt", sep=" ", header=TRUE)
+countries <- merge(x = gdp, y = piracy)
 
+# plotting
+plot(countries$GDP, countries$Piracy)
+# get correlation
+cor.test(countries$GDP, countries$Piracy)
 
+# get linear model
+line <- lm(countries$Piracy ~ countries$GDP)
+abline(line)
 
+# to get ggplot2, graphics package
+install.packages("ggplot2")
 
 
 
