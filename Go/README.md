@@ -1,1 +1,0 @@
-Learning Go from https://golangbot.com/
